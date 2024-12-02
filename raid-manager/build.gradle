@@ -1,0 +1,74 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.5'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.sleepzz'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	
+	// https://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '3.4.1'
+	
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.34'
+	
+	// https://mvnrepository.com/artifact/javax.servlet/jstl
+	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+	
+	// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+	implementation group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '11.0.0'
+	
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '3.3.5'
+	
+	// https://mvnrepository.com/artifact/javax.servlet/jstl
+	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
+	
+	// https://mvnrepository.com/artifact/com.google.api-client/google-api-client
+	implementation group: 'com.google.api-client', name: 'google-api-client', version: '1.25.0'
+	
+	// https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client
+	implementation group: 'com.google.oauth-client', name: 'google-oauth-client', version: '1.36.0'
+	
+	// https://mvnrepository.com/artifact/com.google.apis/google-api-services-sheets
+	implementation group: 'com.google.apis', name: 'google-api-services-sheets', version: 'v4-rev612-1.25.0'
+	
+	// https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-jetty
+	implementation group: 'com.google.oauth-client', name: 'google-oauth-client-jetty', version: '1.36.0'
+	
+	// https://mvnrepository.com/artifact/com.google.api-client/google-api-client-jackson2
+	implementation group: 'com.google.api-client', name: 'google-api-client-jackson2', version: '2.7.0'
+	
+	// https://mvnrepository.com/artifact/org.json/json
+	implementation group: 'org.json', name: 'json', version: '20240303'
+	
+	// https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphql-spring-boot-starter
+	implementation group: 'com.graphql-java-kickstart', name: 'graphql-spring-boot-starter', version: '15.1.0'
+	
+	// https://mvnrepository.com/artifact/com.graphql-java-kickstart/graphql-java-tools
+	implementation group: 'com.graphql-java-kickstart', name: 'graphql-java-tools', version: '14.0.0'
+	
+	// https://mvnrepository.com/artifact/org.projectlombok/lombok
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.36'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
